@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk
+FROM registry.cn-heyuan.aliyuncs.com/jiantao1/jiantao1:latest
 
 ARG JAR_FILE=mall.jar
 USER root
