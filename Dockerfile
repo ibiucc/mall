@@ -2,6 +2,7 @@ FROM openjdk:8-jdk
 
 ARG JAR_FILE=mall.jar
 USER root
+RUN sed -i 's#http://deb.debian.org#https://mirrors.tuna.tsinghua.edu.cn#g' /etc/apt/sources.list
 # 设置时区 安装ps命令
 ENV TZ=Asia/Shanghai
 RUN set -eux; \
