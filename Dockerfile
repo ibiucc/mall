@@ -9,6 +9,10 @@ RUN set -eux; \
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime; \
     echo $TZ > /etc/timezone; \
     apt-get update && apt-get install -y procps && apt-get install -y maven
+# 复制 Maven 的配置文件到容器中
+COPY settings.xml /usr/share/maven/conf/settings.xml
+
+
 # 新建应用目录
 ARG HOME=/data/mall
 RUN mkdir -p $HOME/config;mkdir $HOME/log;mkdir $HOME/bin;mkdir $HOME/h2db;mkdir $HOME/file;mkdir $HOME/code;ls -la $HOME
