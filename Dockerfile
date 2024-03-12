@@ -2,7 +2,7 @@ FROM registry.cn-heyuan.aliyuncs.com/jiantao1/jiantao1:latest
 
 ARG JAR_FILE=mall.jar
 USER root
-RUN sed -i 's#http://deb.debian.org#https://mirrors.tuna.tsinghua.edu.cn#g' /etc/apt/sources.list
+#RUN sed -i 's#http://deb.debian.org#https://mirrors.tuna.tsinghua.edu.cn#g' /etc/apt/sources.list
 # 设置时区 安装ps命令
 ENV TZ=Asia/Shanghai
 RUN set -eux; \
@@ -10,7 +10,7 @@ RUN set -eux; \
     echo $TZ > /etc/timezone; \
     apt-get update && apt-get install -y procps && apt-get install -y maven
 # 复制 Maven 的配置文件到容器中
-COPY settings.xml /usr/share/maven/conf/settings.xml
+# COPY settings.xml /usr/share/maven/conf/settings.xml
 
 
 # 新建应用目录
