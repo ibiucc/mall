@@ -1,5 +1,5 @@
-#FROM registry.cn-heyuan.aliyuncs.com/jiantao1/jiantao1:latest
-FROM openjdk:8-jre-alpine
+FROM registry.cn-heyuan.aliyuncs.com/jiantao1/jiantao1:latest
+# FROM openjdk:8-jre-alpine
 
 ARG JAR_FILE=mall.jar
 USER root
